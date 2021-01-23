@@ -1,13 +1,29 @@
-## Welcome to GitHub Pages
+## Bem vindo ao DapperBr
 
-You can use the [editor on GitHub](https://github.com/dapperbr/dapperbr.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+Este site é para desenvolvedores que desejam aprender como usar o Dapper, o micro ORM desenvolvido pela equipe do StackOverflow. 
+Este site foi inspirado no famoso e existente site [Learndapper](https://www.learndapper.com), para trazer todo esse conteúdo na nossa lingua portuguesa.
+Caso queira contribuir com esse projeto opensource, fique a vontade de mandar um PR para nós :)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### O que é Dapper?
+O Dapper é um micro ORM voltado para desenvolvedores .NET, onde seu principal objetivo é realizar o mapeamento de consultas em banco de dados para objetos.
 
-### Markdown
+### O que é um micro ORM?
+Um micro ORM é um ORM (Mapeamento de Objetos Relacionais) só que com apenas a funcionalidade de mapeamento de consultas em objetos, por esse motivo ele se classifica como um micro ORM. Veja abaixo uma tabela demonstrando a diferença do Dapper como micro ORM, comparando com outros ORM.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+|                                 | Micro ORM| ORM|  
+| --------------------------------|:---: |:---: |
+|  Mapeamento de Query em objetos |:+1:|:+1:|
+|  Cache em resultados |:-1:|:+1:|
+|  Tracking de Mudanças|:-1:|:+1:|
+|  Geração de SQL	|:-1: ¹ |:+1:|
+|  Gerenciamento de Identidade	|:-1:|:+1:|
+|  Gerenciamento de Associação	|:-1:|:+1:|
+|  Lazy Loading	|:-1:|:+1:|
+|  Padrão Unit of Work | :-1:|:+1:|
+|  Migração de Dados (Migrations) |:-1:|:+1:|
 
+*1. Existe o pacote Contrib que consegue fazer a geração de SQL, porém, com limitações.*
+*fonte: www.learndapper.com*
 ```markdown
 Syntax highlighted code block
 
