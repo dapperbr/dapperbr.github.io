@@ -1,7 +1,7 @@
 ## Bem vindo ao DapperBr
 
-Este site é para desenvolvedores que desejam aprender como usar o Dapper, o micro ORM desenvolvido pela equipe do StackOverflow.<br />
-Caso queira contribuir com esse projeto opensource, fique a vontade de mandar um PR para nós :)
+<p>Este site é para desenvolvedores que desejam aprender como usar o Dapper, o micro ORM desenvolvido pela equipe do StackOverflow.</p>
+<p>Caso queira contribuir com esse projeto opensource, fique a vontade de mandar um PR para nós </p>
 
 ### O que é Dapper?
 O Dapper é um micro ORM voltado para desenvolvedores .NET, onde seu principal objetivo é realizar o mapeamento de consultas em banco de dados para objetos.
@@ -22,7 +22,6 @@ Um micro ORM possuí apenas a funcionalidade de realizar mapeamento de consultas
 |  Migração de Dados (Migrations) |:-1:|:+1:|
 
 *1. Existe o pacote Contrib que consegue fazer a geração de SQL, porém, com limitações.*
-*fonte: www.learndapper.com*
 ```markdown
 Syntax highlighted code block
 
