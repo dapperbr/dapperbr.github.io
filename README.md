@@ -4,10 +4,11 @@
 <p>Caso queira contribuir com esse projeto opensource, fique a vontade de mandar um PR para nós </p>
 
 ### O que é Dapper?
-O Dapper é um micro ORM voltado para desenvolvedores .NET, onde seu principal objetivo é realizar o mapeamento de consultas em banco de dados para objetos.
+<p>O Dapper é um micro ORM voltado para desenvolvedores .NET, onde seu principal objetivo é realizar o mapeamento de consultas em banco de dados para objetos.</p>
 
 ### O que é um micro ORM?
-Um micro ORM possuí apenas a funcionalidade de realizar mapeamento de consultas em objetos, por esse motivo ele se classifica como um micro ORM. Veja abaixo uma tabela demonstrando a diferença do micro ORM Dapper, comparando com outros ORM.
+<p>Um micro ORM possuí apenas a funcionalidade de realizar mapeamento de consultas em objetos, por esse motivo ele se classifica como um micro ORM.</p> 
+<p>Veja abaixo uma tabela demonstrando a diferença do micro ORM Dapper, comparando com outros ORM.</p>
 
 |                                 | Micro ORM| ORM|  
 | --------------------------------|:---: |:---: |
