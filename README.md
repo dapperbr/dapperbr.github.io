@@ -25,7 +25,7 @@
 *1. O pacote Dapper.Contrib consegue fazer a geração de SQL, porém, somente para cenários simples.
 
 ### Quando usar o Dapper?
-O Dapper foi desenvolvido para resolver problemas de performance em consultas SQL, portanto, caso seja o seu cenário de garantir performance e controle nas consultas SQl, Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
+O Dapper foi desenvolvido para resolver problemas de performance em consultas SQL, portanto, caso seja este seu cenário de performance e controle em consultas SQL, Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
 
 - *Testes automatizados são mais dificeis de serem realizados.*
 - *O time tem que dominar SQL e ter controle sobre as consultas realizadas.
