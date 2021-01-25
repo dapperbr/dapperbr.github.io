@@ -23,3 +23,12 @@
 |  Migração de Dados (Migrations) |:-1:|:+1:|
 
 *1. O pacote Dapper.Contrib consegue fazer a geração de SQL, porém, somente para cenários simples.
+
+### Quando usar o Dapper?
+O Dapper foi criado, na necessidade de cenários onde exista a necessidade de requisitos relacionados a performance, portanto, caso seja o seu cenário Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
+
+- Testes automatizados são mais dificeis de serem realizados.
+- O time tem que dominar SQL e ter controle sobre as consultas realizadas.
+
+Dapper é muito simples e facil de usar, e com compatibilidade com várias tipos de banco de dados, devido ao fato de ser implementado em cima do IDbConnection do ADO.NET.
+
