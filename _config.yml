@@ -1,5 +1,5 @@
 theme: jekyll-theme-cayman
 title: DapperBr
-subtitle: Guia de uso do Dapper em pt-br
+description: Guia de uso do Dapper C# em pt-br
 plugins:
   - jemoji
