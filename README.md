@@ -40,5 +40,7 @@ Para a instalação a última versão via linha de comando, basta digitar o segu
 ``` dotnet add package Dapper```
 
 Para instalar a última versão no Package Manager Console no Visual Studio, basta digitar o seguinte comando:
+
 ``` install-package Dapper ```
- O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper">disponível no GitHub</a>.
+ 
+O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper">disponível no GitHub</a>.
