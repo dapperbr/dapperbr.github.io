@@ -1,7 +1,7 @@
 ## Bem vindo ao DapperBr
 
 <p>Este site é para desenvolvedores que desejam aprender como usar o Dapper, o micro ORM desenvolvido pela equipe do StackOverflow.</p>
-<p>Caso queira contribuir com essa documentação, fique a vontade em mandar um PR para nós!<br/> https://github.com/dapperbr/dapperbr.github.io</p>
+<p>Caso queira contribuir com essa documentação, fique a vontade em mandar um PR <a href ="https://github.com/dapperbr/dapperbr.github.io">DapperBr</a></p>
 
 ### O que é Dapper?
 <p>O Dapper é um micro ORM voltado para desenvolvedores .NET, onde seu principal objetivo é realizar o mapeamento de consultas em banco de dados para objetos.</p>
@@ -25,7 +25,7 @@
 *1. O pacote Dapper.Contrib consegue fazer a geração de SQL, porém, somente para cenários simples.
 
 ### Quando usar o Dapper?
-O Dapper foi criado, na necessidade de cenários onde exista a necessidade de requisitos relacionados a performance, portanto, caso seja o seu cenário Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
+O Dapper foi desenvolvido para resolver problemas de performance em consultas SQL, portanto, caso seja o seu cenário de garantir performance e controle nas consultas SQl, Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
 
 - *Testes automatizados são mais dificeis de serem realizados.*
 - *O time tem que dominar SQL e ter controle sobre as consultas realizadas.*
