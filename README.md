@@ -28,7 +28,17 @@
 O Dapper foi desenvolvido para resolver problemas de performance em consultas SQL, portanto, caso seja o seu cenário de garantir performance e controle nas consultas SQl, Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
 
 - *Testes automatizados são mais dificeis de serem realizados.*
-- *O time tem que dominar SQL e ter controle sobre as consultas realizadas.*
+- *O time tem que dominar SQL e ter controle sobre as consultas realizadas.
 
-Dapper é muito simples e facil de usar, e com compatibilidade com várias tipos de banco de dados, devido ao fato de ser implementado em cima do **IDbConnection** do **ADO.NET**.
+Em resumo, o Dapper é muito simples e facil de usar, e com compatibilidade com várias tipos de banco de dados, devido ao fato de ser implementado em cima do **IDbConnection** do **ADO.NET**.
 
+### Como instalar o Dapper na minha aplicação?
+Dapper está disponível nos pacotes Nuget, compatível com as aplicações Full Framework e .NET core.
+
+Para a instalação a última versão via linha de comando, basta digitar o seguinte comando:
+
+``` dotnet add package Dapper```
+
+Para instalar a última versão no Package Manager Console no Visual Studio, basta digitar o seguinte comando:
+``` install-package Dapper ```
+ O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper">disponível no GitHub</a>.
