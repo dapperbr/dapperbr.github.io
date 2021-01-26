@@ -30,7 +30,7 @@ O Dapper foi desenvolvido para resolver problemas de performance em consultas SQ
 - *Testes automatizados são mais dificeis de serem realizados.*
 - *O time tem que dominar SQL e ter controle sobre as consultas realizadas.
 
-Uma das qualidades do Dapper é sua implementação simples com poucas linhas você consegue realizar consultas e transações em banco de dados. compatível com vários banco de dados, devido ao fato de utilizar vários ExtensonMethods em cima da interface **IDbConnection** do **ADO.NET**.
+Uma das qualidades do Dapper é sua implementação simples com poucas linhas você consegue realizar consultas e transações em banco de dados. Compatível com vários banco de dados, devido ao fato de utilizar várias implantações de ExtensionMethods na interface **IDbConnection** do **ADO.NET**.
 
 ### Como instalar o Dapper na minha aplicação?
 Dapper está disponível nos pacotes Nuget, compatível com as aplicações Full Framework e .NET core.
