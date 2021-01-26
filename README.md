@@ -31,7 +31,37 @@ O Dapper foi desenvolvido para resolver problemas de performance em consultas SQ
 - *O time tem que dominar SQL e ter controle sobre as consultas realizadas.
 
 Uma das qualidades do Dapper é sua implementação simples com poucas linhas você consegue realizar consultas e transações em banco de dados. Compatível com vários banco de dados, devido ao fato de utilizar várias implantações de ExtensionMethods na interface **IDbConnection** do **ADO.NET**.
+### ADO.NET e o Dapper
+Para realizar uma consulta em uma tabela de Pessoas, e mapear em um objeto você teria que realizar a seguinte implementação:
+```csharp
+var sql = "select * from pessoas";
+var pessoas = new List<Pessoa>();
+using var conexao  = new SqlConnection(connString);
 
+conexao.Open();
+    
+using var comando = new SqlCommand(sql, conexao);
+using var leitor = commando.ExecuteReader();
+        
+            var pessoa = new Pessoa
+            {
+                PessoaId = leitor.GetInt32(leitor.GetOrdinal("PessoaId")),
+                Nome = leitor.GetString(leitor.GetOrdinal("Nome")),
+                Idade = leitor.GetInt32(leitor.GetOrdinal("Idade")),
+                Email=  leitor.GetString(leitor.GetOrdinal("Email"))
+            };
+            pessoas.Add(pessoa);
+```
+Agora, a implementação com Dapper:
+```csharp
+
+var sql = "select * from pessoas";
+var pessoas = new List<Pessoa>();
+using var conexao  = new SqlConnection(connString);
+pessoas = conexao.Query<Pessoa>(sql);
+```
+
+Como podemos perceber a implementação utilizando Dapper simplifica tratando das questões de mapeamento e commands para nós, economizando um bom tempo que gastaríamos implementando tudo isto na mão, e tornando a legibilidade do código simples.
 ### Como instalar o Dapper na minha aplicação?
 Dapper está disponível nos pacotes Nuget, compatível com as aplicações Full Framework e .NET core.
 
