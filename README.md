@@ -81,6 +81,7 @@ O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper
 
 ## Retornando multiplos registros ##
 Existem alguns métodos que você pode usar para retonar multiplos registros, segue abaixo uma lista de métodos disponíveis no Dapper:
+
 | Método | Descrição |
 |--------|-----------|
 |Query|Retorna um IEnumerable&lt;dynamic&gt; |
@@ -166,6 +167,7 @@ Console.ReadLine();
 
 ## Retornando apenas um registro ##
 Existem alguns métodos que você pode usar para retonar apenas um registros, segue abaixo uma lista de métodos disponíveis no Dapper:
+
 | Método | Descrição |Exceções|
 |--------|-----------|--------|
 |QuerySingle|Retorna apenas um registro utilizando do tipo **dynamic** |Caso não retorne ou retorne mais de 1 registro, será lançada a exception InvalidOperationException.| 
