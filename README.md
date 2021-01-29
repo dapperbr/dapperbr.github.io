@@ -80,7 +80,7 @@ Para instalar a última versão no Package Manager Console no Visual Studio, bas
 O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper">disponível no GitHub</a>.
 
 ## Retornando multiplos registros ##
-Existem alguns métodos que você pode usar para retonar multiplos registros, segue abaixo uma lista de metodos disponiveis no Dapper:
+Existem alguns métodos que você pode usar para retonar multiplos registros, segue abaixo uma lista de métodos disponíveis no Dapper:
 | Método | Descrição |
 |--------|-----------|
 |Query|Retorna um IEnumerable&lt;dynamic&gt; |
@@ -88,8 +88,6 @@ Existem alguns métodos que você pode usar para retonar multiplos registros, se
 |QueryAsync| Retorna um IEnumerable&lt;dynamic&gt; de forma assincrona|
 |QueryAsync<T>| Retorna um IEnumerable&lt;T&gt; de forma assincrona|
     
-## Quais as diferenças entre Query e Query&lt;T&gt; ? ##
-
 A principal diferença está relacionada a tipagem. O método **Query** retorna um **IEnumerable** do tipo **dynamic** e o método genérico **Query&lt;T&gt;** retorna um **IEnumerable** de uma classe genérica **T**.
 
 *Classe de Pessoas:*
@@ -166,4 +164,17 @@ Console.ReadLine();
 ```
 ***Atenção:** O uso do dynamic pode trazer sérios problemas, pois,qualquer erro de escrita só será identificado em Runtime, por exemplo: Caso você informe ao invés o campos pessoa.Id, você informe pessoa.ID, o intellisense não irá reclamar, e ao executar o programa você irá ser surpreendido com um erro.*
 
-
+## Retornando apenas um registro ##
+Existem alguns métodos que você pode usar para retonar apenas um registros, segue abaixo uma lista de métodos disponíveis no Dapper:
+| Método | Descrição |Exceções|
+|--------|-----------|--------|
+|QuerySingle|Retorna apenas um registro utilizando do tipo **dynamic** |Caso não retorne ou retorne mais de 1 registro, será lançada a exception InvalidOperationException.| 
+|QuerySingle&lt;T&gt;| Retorna apenas um registro do tipo **T** |Caso não retorne ou retorne mais de 1 registro, será lançada a exception InvalidOperationException.|
+|QuerySingleOrDefault| Retorna apenas um registro utilizando do tipo **dynamic**|Caso retorne mais de 1 registro, será lançada a exception InvalidOperationException.|
+|QuerySingleOrDefault&lt;T&gt;| Retorna apenas um registro utilizando do tipo **T**|Caso retorne mais de 1 registro,será lançada a exception InvalidOperationException.|
+|QueryFirst| Retorna apenas um registro utilizando do tipo **dynamic**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
+|QueryFirst&lt;T&gt;| Retorna apenas um registro utilizando do tipo **T**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
+|QueryFirst| Retorna apenas o primeiro registro utilizando do tipo **dynamic**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
+|QueryFirst&lt;T&gt;| Retorna apenas primeiro registro utilizando do tipo **T**|Caso não retorne registro, será lançada a exception InvalidOperationException.|   
+|QueryFirstOrDefault| Retorna apenas primeiro registro ou null caso não exista registros, utiliza o tipo **dynamic**||
+|QueryFirstOrDefault&lt;T&gt;| Retorna apenas primeiro registro ou null caso não exista registros, utiliza o tipo **T**|| 
