@@ -28,7 +28,7 @@
 O Dapper foi desenvolvido para resolver problemas de performance em consultas SQL, portanto, caso seja este seu cenário de performance e controle em consultas SQL, Dapper pode ser uma boa solução comparado aos Orms, porém, cabe algumas ressalvas importantes antes de tomar essa decisão:
 
 - *Testes automatizados são mais dificeis de serem realizados.*
-- *O time tem que dominar SQL e ter controle sobre as consultas realizadas.
+- *O time tem que dominar SQL e ter controle sobre as consultas realizadas.*
 
 Uma das qualidades do Dapper é sua implementação simples com poucas linhas você consegue realizar consultas e transações em banco de dados. Compatível com vários banco de dados, devido ao fato de utilizar várias implantações de ExtensionMethods na interface **IDbConnection** do **ADO.NET**.
 ### ADO.NET e o Dapper
@@ -74,3 +74,92 @@ Para instalar a última versão no Package Manager Console no Visual Studio, bas
 ``` install-package Dapper ```
  
 O código fonte do Dapper está <a href="https://github.com/StackExchange/Dapper">disponível no GitHub</a>.
+
+## Retornando multiplos registros ##
+Existem alguns métodos que você pode usar para retonar multiplos registros, segue abaixo uma lista de metodos disponiveis no Dapper:
+| Método | Descrição |
+|--------|-----------|
+|Query|Retorna um IEnumerable&lt;dynamic&gt; |
+|Query<T>| Retorna um IEnumerable&lt;T&gt; |
+|QueryAsync| Retorna um IEnumerable&lt;dynamic&gt; de forma assincrona|
+|QueryAsync<T>| Retorna um IEnumerable&lt;T&gt; de forma assincrona|
+    
+## Quais as diferenças entre Query e Query&lt;T&gt; ? ##
+
+A principal diferença está relacionada a tipagem. O método **Query** retorna um **IEnumerable** do tipo **dynamic** e o método genérico **Query&lt;T&gt;** retorna um **IEnumerable** de uma classe genérica **T**.
+
+*Classe de Pessoas:*
+
+```csharp
+public class Pessoa
+{
+    public Guid Id{get;set;}
+    public string Nome{get;set;}
+    public int Idade{get;set;}
+    public string Email{get;set;}
+}
+```
+*Veja um exemplo abaixo, usando Query&lt;T&gt;:*
+
+```csharp
+var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
+using var conexao  = new SqlConnection(connString);
+var pessoas = conexao.Query<Pessoa>(sql);
+foreach(var pessoa in pessoas)
+{
+    Console.WriteLine(pessoa.Id);
+    Console.WriteLine(pessoa.Nome);
+    Console.WriteLine(pessoa.Idade);
+    Console.WriteLine(pessoa.Email);
+}
+Console.ReadLine();
+```
+Veja um exemplo abaixo, usando Query&lt;dynamic&gt;:*
+
+```csharp
+var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
+using var conexao  = new SqlConnection(connString);
+var pessoas = conexao.Query(sql);
+foreach(var pessoa in pessoas)
+{
+    Console.WriteLine(pessoa.Id);
+    Console.WriteLine(pessoa.Nome);
+    Console.WriteLine(pessoa.Idade);
+    Console.WriteLine(pessoa.Email);
+}
+Console.ReadLine();
+```
+*Veja um exemplo abaixo, usando QueryAsync&lt;T&gt;:*
+
+
+```csharp
+var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
+using var conexao  = new SqlConnection(connString);
+var pessoas = await conexao.QueryAsync<Pessoa>(sql);
+foreach(var pessoa in pessoas)
+{
+    Console.WriteLine(pessoa.Id);
+    Console.WriteLine(pessoa.Nome);
+    Console.WriteLine(pessoa.Idade);
+    Console.WriteLine(pessoa.Email);
+}
+Console.ReadLine();
+```
+Veja um exemplo abaixo, usando QueryAsync&lt;dynamic&gt;:*
+
+```csharp
+var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
+using var conexao  = new SqlConnection(connString);
+var pessoas = await conexao.QueryAsync(sql);
+foreach(var pessoa in pessoas)
+{
+    Console.WriteLine(pessoa.Id);
+    Console.WriteLine(pessoa.Nome);
+    Console.WriteLine(pessoa.Idade);
+    Console.WriteLine(pessoa.Email);
+}
+Console.ReadLine();
+```
+***Atenção:** O uso do dynamic pode trazer sérios problemas, pois,qualquer erro de escrita só será identificado em Runtime, por exemplo: Caso você informe ao invés o campos pessoa.Id, você informe pessoa.ID, o intellisense não irá reclamar, e ao executar o programa você irá ser surpreendido com um erro.
+
+
