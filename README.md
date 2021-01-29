@@ -173,8 +173,6 @@ Existem alguns métodos que você pode usar para retonar apenas um registros, se
 |QuerySingleOrDefault| Retorna apenas um registro utilizando do tipo **dynamic**|Caso retorne mais de 1 registro, será lançada a exception InvalidOperationException.|
 |QuerySingleOrDefault&lt;T&gt;| Retorna apenas um registro utilizando do tipo **T**|Caso retorne mais de 1 registro,será lançada a exception InvalidOperationException.|
 |QueryFirst| Retorna apenas um registro utilizando do tipo **dynamic**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
-|QueryFirst&lt;T&gt;| Retorna apenas um registro utilizando do tipo **T**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
-|QueryFirst| Retorna apenas o primeiro registro utilizando do tipo **dynamic**|Caso não retorne registro, será lançada a exception InvalidOperationException.|
-|QueryFirst&lt;T&gt;| Retorna apenas primeiro registro utilizando do tipo **T**|Caso não retorne registro, será lançada a exception InvalidOperationException.|   
+|QueryFirst&lt;T&gt;| Retorna apenas um registro utilizando do tipo **T**|Caso não retorne registro, será lançada a exception InvalidOperationException.|  
 |QueryFirstOrDefault| Retorna apenas primeiro registro ou null caso não exista registros, utiliza o tipo **dynamic**||
 |QueryFirstOrDefault&lt;T&gt;| Retorna apenas primeiro registro ou null caso não exista registros, utiliza o tipo **T**|| 
