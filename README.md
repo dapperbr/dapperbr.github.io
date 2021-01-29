@@ -32,7 +32,10 @@ O Dapper foi desenvolvido para resolver problemas de performance em consultas SQ
 
 Uma das qualidades do Dapper é sua implementação simples com poucas linhas você consegue realizar consultas e transações em banco de dados. Compatível com vários banco de dados, devido ao fato de utilizar várias implantações de ExtensionMethods na interface **IDbConnection** do **ADO.NET**.
 ### ADO.NET e o Dapper
+
 Para realizar uma consulta em uma tabela de Pessoas, e mapear em um objeto você teria que realizar a seguinte implementação:
+
+*A implementação com ADO.NET:*
 ```csharp
 var sql = "select * from pessoas";
 var pessoas = new List<Pessoa>();
@@ -52,7 +55,7 @@ using var leitor = commando.ExecuteReader();
             };
             pessoas.Add(pessoa);
 ```
-Agora, a implementação com Dapper:
+*Agora, a implementação com Dapper:*
 ```csharp
 
 var sql = "select * from pessoas";
@@ -62,6 +65,7 @@ pessoas = conexao.Query<Pessoa>(sql);
 ```
 
 Como podemos perceber a implementação utilizando Dapper simplifica tratando das questões de mapeamento e commands para nós, economizando um bom tempo que gastaríamos implementando tudo isto na mão, e tornando a legibilidade do código simples.
+
 ### Como instalar o Dapper na minha aplicação?
 Dapper está disponível nos pacotes Nuget, compatível com as aplicações Full Framework e .NET core.
 
@@ -114,7 +118,7 @@ foreach(var pessoa in pessoas)
 }
 Console.ReadLine();
 ```
-Veja um exemplo abaixo, usando Query&lt;dynamic&gt;:*
+*Veja um exemplo abaixo, usando Query&lt;dynamic&gt;:*
 
 ```csharp
 var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
@@ -145,7 +149,7 @@ foreach(var pessoa in pessoas)
 }
 Console.ReadLine();
 ```
-Veja um exemplo abaixo, usando QueryAsync&lt;dynamic&gt;:*
+*Veja um exemplo abaixo, usando QueryAsync&lt;dynamic&gt;:*
 
 ```csharp
 var sql = "SELECT Id, Nome, Idade, Email FROM Pessoas";
@@ -160,6 +164,6 @@ foreach(var pessoa in pessoas)
 }
 Console.ReadLine();
 ```
-***Atenção:** O uso do dynamic pode trazer sérios problemas, pois,qualquer erro de escrita só será identificado em Runtime, por exemplo: Caso você informe ao invés o campos pessoa.Id, você informe pessoa.ID, o intellisense não irá reclamar, e ao executar o programa você irá ser surpreendido com um erro.
+***Atenção:** O uso do dynamic pode trazer sérios problemas, pois,qualquer erro de escrita só será identificado em Runtime, por exemplo: Caso você informe ao invés o campos pessoa.Id, você informe pessoa.ID, o intellisense não irá reclamar, e ao executar o programa você irá ser surpreendido com um erro.*
 
 
